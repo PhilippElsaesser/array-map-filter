@@ -39,6 +39,7 @@ Exemple d'entrée:
  */
 
 function searchWordFilter(items, search) {
+  return items.filter( x => x.indexOf(search)!== -1 || x.indexOf(search.charAt(0).toUpperCase() + search.slice(1)) !== -1);
 }
 
 // Ne pas modifier l'export
