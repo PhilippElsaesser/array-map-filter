@@ -43,6 +43,9 @@ En sortie: [
  */
 
 function getFoodCategories(foods) {
+  let returnArray = [];
+  foods.map( x => x.isVegetarian ? returnArray.push( x.food + " is suitable for vegetarians") : returnArray.push(x.food + " is not suitable for vegetarians") );
+  return returnArray;
 }
 
 
