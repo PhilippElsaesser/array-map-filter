@@ -64,6 +64,16 @@ En prenant les deux exemples d'arguments d'entrée, on obtiendrait ceci en sorti
 */
 
 function getActivitiesMembers(activities, persons) {
+  let returnArr = [];
+
+  activities.map( elem => returnArr.push( { activity : elem, persons : [] } ) );
+
+  for (let i = 0; i<activities.length; i++) {
+    persons.filter( elem => elem.activities.includes(activities[i])).map( el => returnArr[i].persons.push(el.name) )
+  }
+
+  return returnArr;
+
 }
 
 
